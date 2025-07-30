@@ -29,6 +29,16 @@ def par_impar(numero): # funcion par o impar
     else:
         print(f"{numero} es impar")
 
+def promedio_n_notas(numeros): #funcion calcular el promedio de n notas
+    while True:
+        n_notas=int(input(f"Calcular el promedio de n calificaciones: "))
+        for i in range(n_notas):
+            notas=int(input(f"Ingrese el numero_{i+1}: "))
+            numeros.append(notas)
+            print("Numero guardado")
+    promedio_n_notas= sum(numeros)/len(numeros)
+    print(f"El promedio total de {n_notas} es igual a:{promedio_n_notas}")
+
 def numero_mayor_menor (numeros): #Ingresar n números y mostrar el mayor y el menor
     if not numeros:
         return None, None
