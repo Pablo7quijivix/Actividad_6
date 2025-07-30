@@ -2,26 +2,39 @@
 def bienvenida():
     print("____Bienvenido al sistema de operaciones matematicas___")
 
-def suma_total(a,b):
-    return a+b
+def suma_total(numeros): #funcion de suma total
+    return sum(numeros)
 
-def premedio(a,b):
-    return a*b
-def numeros_positivos_negativos (a,b):
-    return
+def premedio(numeros): #funcion del promedio de n numeros
+    return sum(numeros)/ len(numeros)
 
-def area_triangulo (a,b):
-    return 1/2*a*b
+def numeros_positivos_negativos (numeros):
+    numeros_pos= 0
+    numeros_nega= 0#funcion de conteo de numeros negativos y positivos
+    for i in range(numeros):
+        if i <0:
+            numeros_nega +=1
+        else:
+            numeros_pos +=1
+print(f"TOTAL NUMEROS NEGATIVOS: {numeros_nega}")
+print(f"TOTAL NUMEROS POSITIVOS: {numeros_pos}")
 
-def par_impar(numero):
-    return numero % 2 == 0
 
-def promedio_ncalificaciones (calificacion):
-    return calificacion+calificacion/calificacion
+def area_triangulo (base,altura): #funcion calcular area de un triangulo
+    return (base* altura) / 2
 
-def numero_mayor_menor (numeros):
-    return numeros
+def par_impar(numero): # funcion par o impar
+    if numero % 2 ==0:
+        print(f"{numero} es par")
+    else:
+        print(f"{numero} es impar")
 
+def numero_mayor_menor (numeros): #Ingresar n números y mostrar el mayor y el menor
+    if not numeros:
+        return None, None
+    else:
+        mayor = max(numeros)
+        minimo = min(numeros)
 bienvenida()
 
 def menu():
@@ -32,6 +45,9 @@ def menu():
 def menu2():
     print("_____Menú de opcione_____")
     print("1. Ingresar n numeros y mostrar:")
+        print("1. la suma total")
+        print("2. El promedio")
+        print("3. La cantidad de numeros positivos y negativos")
     print("2. Calcular el area de un triangulo:")
     print("3. Verificar si un numero es par o impar")
     print("4. Calcular el promedio de n calificaciones: ")
@@ -45,5 +61,6 @@ while True:
 
     match case:
         case "1":
+            
 
 
