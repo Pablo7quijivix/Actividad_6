@@ -5,14 +5,14 @@ def bienvenida(): #funcion basica de bienvenida
 def suma_total(numeros): #funcion de suma total
     return sum(numeros)
 
-def promedio(numeros): #funcion del promedio de n numeros
-    return sum(numeros)/ len(numeros)
+def promedio(numbers): #funcion del promedio de n numeros
+    return sum(numbers)/ len(numbers)
 
 #funcion de un contador de numeros positivos y negativos
-def numeros_positivos_negativos (numeros):
+def numeros_positivos_negativos (numbers):
     numeros_pos= 0
     numeros_nega= 0#funcion de conteo de numeros negativos y positivos
-    for i in range(numeros):
+    for i in range(numbers):
         if i <0:
             numeros_nega +=1
             return numeros_nega
@@ -91,6 +91,16 @@ while True:
 
                 case "2":
                     promedio1= promedio(numbers)
+                    print(f"El Promedio es igual a:____ {promedio1} ____")
+
+                case "3":
+                    numbers_p_negative= numeros_positivos_negativos(numbers)
+                    print(numbers_p_negative)
+
+        case "2":
+            a=int(input("__INGRESE UN VALOR PARA LA ALTURA DEL TRIANGULO__: "))
+            b=
+            area_t= area_triangulo()
 
 
 
