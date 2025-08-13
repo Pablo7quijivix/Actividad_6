@@ -31,26 +31,28 @@ def par_impar(numero): # funcion numero par o impar
     else:
         print(f"{numero} = es impar")
 
-def promedio_n_notas(numeros): #funcion calcular el promedio de n notas
+def promedio_n_notas(numbers): #funcion calcular el promedio de n notas
     while True:
-        n_notas=int(input(f"Calcular el promedio de n calificaciones: "))
+        print(f"Calcular el promedio de n calificaciones: ")
+        n_notas=int(input(f"Ingrese n calificaciones para calcular el promedio: "))
         for i in range(n_notas):
-            notas=int(input(f"Ingrese el valor para el numero_{i+1}: "))
-            numeros.append(notas)
+            valor_notas=int(input(f"Ingrese el valor para el numero_{i+1}: "))
+            notas.append(valor_notas)
             print("Numero guardado exitosamente")
-        promedio_n_notas= sum(numeros)/len(numeros)
+        promedio_n_notas= sum(notas)/len(notas)
         print(f"El promedio total de: {n_notas} es igual a:{promedio_n_notas}")
 
-def numero_mayor_menor (numeros): #Ingresar n números y mostrar el mayor y el menor
-    if not numeros:
+def numero_mayor_menor (numbers): #Ingresar n números y mostrar el mayor y el menor
+    if not numbers:
         return None, None
     else:
-        mayor = max(numeros)
-        minimo = min(numeros)
+        mayor = max(numbers)
+        minimo = min(numbers)
 
 bienvenida()
 
 def menu():
+    print(f"=====SELECCIONE UNA OPCION A REALIZAR (1-4)=====")
     print("1. la suma total: ")
     print("2. promedio: ")
     print("3. La cantidad de numeros positivos y negativos")
@@ -70,24 +72,24 @@ numeros=[]
 
 
 while True:
-
     print (menu2())
     op= input("=====Elija su opcion (1-6)=====: ")
     match op:
         case "1":
             numbers= []
             while True:
-                numeros2=int(input("__Cuantos numeros desea ingresar__(pulse 0 si ya no desaea agreagar numeros)________: "))
-                if numeros2 != 0:
-                    for i in range(numeros2):
-                        cantidad_numeros= int(input(f"__Ingrese el valor para el numero {i+1}__: "))
-                        numbers.append(cantidad_numeros)
-                        print(f"NUMERO GUARDADO EXITOSAMENTE")
-                else:
-                    break
-            while True:
+                while True:
+                    numeros2 = int(input("__Cuantos numeros desea ingresar__(pulse 0 para no agregar mas numeros y continuar con el submenu)________: "))
+                    if numeros2 == 0:
+                        break
+                    else:
+                        for i in range(numeros2):
+                            cantidad_numeros = int(input(f"__Ingrese el valor para el numero {i + 1}__: "))
+                            numbers.append(cantidad_numeros)
+                            print(f"NUMERO GUARDADO EXITOSAMENTE")
+
                 print(menu())
-                op2 = input("____Selecciona una opcion (1-4)___: ")
+                op2 =input("____Selecciona una opcion (1-4)___: ")
                 match op2:
                     case "1":
                         numbers_sum = sum(numbers)
@@ -95,7 +97,7 @@ while True:
 
                     case "2":
                         promedio1 = promedio(numbers)
-                        print(f"El Promedio es igual a:____ {promedio1} ____")
+                        print(f"El Promedio de {numbers} es igual a:____ {promedio1} ____")
 
                     case "3":
                         numbers_p_negative = positivos_negativos(numbers)
@@ -103,16 +105,14 @@ while True:
 
                     case "4":
                         print(f"==VOLVIENDO AL MENU PRINCIPAL==")
-                        continue
+                        break
                     case _:
                         print(f"===OPCION NO VALIDA, INTENTE DE NUEVO===")
-
-
         case "2":
             a=int(input("__INGRESE UN VALOR PARA LA ALTURA DEL TRIANGULO__: "))
             b=int(input("__INGRESE UN VALOR PARA LA BASE DEL TRIANGULO__: "))
             area_t= area_triangulo(a,b)
-            print(area_t)
+            print(f"El area del triangulo con altura: {a} y base:{b}_ es igual 'area:{area_t}'")
             #le pasamos a los parametros los valores de a y b que estos numeros son la altura
             # Y base de nuestro triangulo a calcular
         case "3":
@@ -132,13 +132,10 @@ while True:
                 print(numero_mayor_menor(numeros))
         case "6":
             print("==========SALIENDO DEL PROGRAMA==========")
+            break
 
-
-
-
-
-                
-    break
+        case _:
+            print(f"_________OPCION NO VALIDA, PORFAVOR INTENTE DE NUEVO__________")
             
 
 
