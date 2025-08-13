@@ -9,16 +9,15 @@ def promedio(numbers): #funcion del promedio de n numeros
     return sum(numbers)/ len(numbers)
 
 #funcion de un contador de numeros positivos y negativos
-def num_pos_nega(numbers):
-    numeros_pos= 0
-    numeros_nega= 0#funcion de conteo de numeros negativos y positivos
-    for i in range(numbers):
-        if i <0:
+def positivos_negativos(numbers):
+    numeros_pos = 0
+    numeros_nega = 0
+    for j in numbers:
+        if j <0:
             numeros_nega +=1
-            return numeros_nega
         else:
             numeros_pos +=1
-            return numeros_pos
+    print(f"LISTADO DE NUMEROS: {numbers}")
     print(f"TOTAL NUMEROS NEGATIVOS: {numeros_nega}")
     print(f"TOTAL NUMEROS POSITIVOS: {numeros_pos}")
 
@@ -55,6 +54,7 @@ def menu():
     print("1. la suma total: ")
     print("2. promedio: ")
     print("3. La cantidad de numeros positivos y negativos")
+    print("4. =====VOLVER AL MENU PRINCIPAL=====")
 
 def menu2():
     print("_____Menú de opcione_____")
@@ -94,16 +94,16 @@ while True:
                         print(f"===LA SUMA TOTAL DE {numbers}, ES IGUAL A: {numbers_sum}")
 
                     case "2":
-                        promedio1 = promedio()
+                        promedio1 = promedio(numbers)
                         print(f"El Promedio es igual a:____ {promedio1} ____")
 
                     case "3":
-                        numbers_p_negative = num_pos_nega(numbers)
+                        numbers_p_negative = positivos_negativos(numbers)
                         print(numbers_p_negative)
 
                     case "4":
-                        print(f"==SALIENDO DEL SUBMENU DE LA OPCION 1")
-                        break
+                        print(f"==VOLVIENDO AL MENU PRINCIPAL==")
+                        continue
                     case _:
                         print(f"===OPCION NO VALIDA, INTENTE DE NUEVO===")
 
